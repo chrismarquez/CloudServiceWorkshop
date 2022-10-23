@@ -9,8 +9,4 @@ RUN npm install
 
 RUN node_modules/typescript/bin/tsc
 
-COPY dist ./dist
-
-WORKDIR /app
-
 CMD ["node", "dist/index.js"]
