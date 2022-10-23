@@ -1,0 +1,19 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "CommonJS",
+        "sourceMap": true,
+        "strict": true,
+        "outDir": "dist/",
+        "lib": [
+            "dom", "esnext"
+        ]
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules", "test/**/*"
+    ]
+}
