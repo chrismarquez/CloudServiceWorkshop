@@ -12,6 +12,7 @@ workflows:
           tag: '${CIRCLE_SHA1}'
       - aws-ecs/deploy-service-update:
           cluster: 'cloud-service-cluster'
+          service-name: 'cloud-service'
           container-image-name-updates: 'container=${MY_APP_PREFIX},tag=${CIRCLE_SHA1}'
           family: 'Main'
           requires:
