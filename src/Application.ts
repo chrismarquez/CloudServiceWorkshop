@@ -15,9 +15,9 @@ export default class Application {
 	readonly app = Express();
 
 	private static async initControllers(): Promise<Controllers> {
-		const vehiclePriceController = new HelloController();
+		const helloController = new HelloController();
 		return {
-			"/hello": vehiclePriceController
+			"/hello": helloController
 		};
 	}
 
@@ -38,6 +38,7 @@ export default class Application {
 			const error = new NotFoundException(resource);
 			next(error);
 		});
+
 		this.app.use((err: HttpException, req: Request, res: Response, _: NextFunction) => {
 			const statusCode = err.statusCode || 500;
 			const name = err.name || "Error";

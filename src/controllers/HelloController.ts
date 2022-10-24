@@ -13,7 +13,7 @@ export class HelloController implements IController {
 	private async getPrice(req: Express.Request, res: Express.Response) {
 		const user = req.params.user;
 		const response = {
-			message: `Hello there ${user}`
+			message: `Hello there ${user}. Nice to meet you.`
 		};
 		res.json(response);
 	}
