@@ -11,8 +11,8 @@ workflows:
           repo: '${MY_APP_PREFIX}'
           tag: '${CIRCLE_SHA1}'
       - aws-ecs/deploy-service-update:
-          cluster: '${MY_APP_PREFIX}-cluster'
-          container-image-name-updates: 'container=${MY_APP_PREFIX}-service,tag=${CIRCLE_SHA1}'
-          family: '${MY_APP_PREFIX}-service'
+          cluster: 'cloud-service-cluster'
+          container-image-name-updates: 'container=${MY_APP_PREFIX},tag=${CIRCLE_SHA1}'
+          family: 'Main'
           requires:
             - aws-ecr/build-and-push-image
