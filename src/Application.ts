@@ -29,6 +29,11 @@ export default class Application {
 	constructor(controllers: Controllers) {
 		this.app.use(Express.json());
 
+		this.app.use("/health", (_req: Request, res: Response, _next: NextFunction) => {
+			res.status(200);
+			res.send();
+		});
+
 		for (const [route, controller] of Object.entries(controllers)) {
 			this.app.use(route, controller.router);
 		}
