@@ -8,7 +8,7 @@ workflows:
     jobs:
       - aws-ecr/build-and-push-image:
           registry-id: AWS_ECR_REGISTRY_ID
-          repo: 'cloud-service-workshop'
+          repo: 'cloud-service-repo'
           tag: '${CIRCLE_SHA1}'
       - aws-ecs/deploy-service-update:
           cluster: 'cloud-service-cluster'
